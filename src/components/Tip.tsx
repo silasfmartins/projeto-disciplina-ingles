@@ -34,9 +34,9 @@ export function Tip({name, tip, senha}: TipProps) {
         <div className="flex flex-col gap-5 max-w-[700px] mx-auto">
           <h1 className="text-5xl">Tip {name}</h1>
           <p className="text-xl text-slate-400 font-mono">{tip}</p>
-          <label className="text-lg" htmlFor="senha">Digite a Senha: </label>
+          <label className="text-lg" htmlFor="senha">Type the password: </label>
           <input value={password} onChange={e => setPassword(e.target.value)} className="rounded-md py-4 px-3 dark:text-white dark:bg-slate-800 bg-slate-300" type="text" name="input-senha" id="senha" />
-          <button onClick={verifiyPassword} className="bg-green-500 rounded-md py-4 px-3 w-40">Enviar</button>
+          <button onClick={verifiyPassword} className="dark:text-black bg-green-500 rounded-md py-4 px-3 w-40 text-white">Send</button>
         </div>
       </div>
     </main>
