@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react"
+import toast from "react-hot-toast";
 
 interface TipProps {
   name: number,
@@ -17,6 +18,7 @@ export function Tip({name, tip, senha}: TipProps) {
     if (password == senha) {
       router.push(`/tips/${name+1}`)
     } else {
+      toast.error('Senha inválida. Tente novamente.')
       console.log("Errou")
     }
   }
