@@ -43,8 +43,7 @@ export function Tip({name, tip1, tip2, tip3, tip4, senha}: TipProps) {
             <li>{tip4}</li>
           </ul>
           <label className="text-lg" htmlFor="senha">Type the password: </label>
-          <span className="text-base text-zinc-300">The password is the name of the object that the next hint was on.
-Note: Enter the password in English.</span>
+          <span className="text-base text-zinc-800 dark:text-zinc-300">The password is the name of the object that the next hint was on.<br>Note: Enter the password in English.</span>
           <input value={password} onChange={e => setPassword(e.target.value)} className="rounded-md py-4 px-3 dark:text-white dark:bg-slate-800 bg-slate-300" type="text" name="input-senha" id="senha" />
           <button className="bg-green-600 rounded-md py-4 px-3 w-40 text-white transition-all hover:bg-emerald-500">Send</button>
         </form>
