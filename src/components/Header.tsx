@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Logo from '../assets/brave-logo.png'
-import Link from 'next/link'
 
 export function Header() {
   return (

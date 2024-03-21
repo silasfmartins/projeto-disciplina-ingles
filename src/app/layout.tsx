@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="pt-br" className={`${inter.variable} ${ubuntuMono.variable}`} suppressHydrationWarning={true}>
       <head>
         <meta name="author" content="Silas Martins" />
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
       </head>
       <body>
         <Providers>{children}</Providers>
