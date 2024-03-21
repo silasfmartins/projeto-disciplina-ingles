@@ -20,7 +20,7 @@ export function Tip({name, tip1, tip2, tip3, tip4, senha}: TipProps) {
   function verifiyPassword(e: FormEvent) {
     if (password.toUpperCase() == senha.toUpperCase()) {
       e.preventDefault()
-      toast('Acertou. Procure a próxima dica.')
+      toast('Got it right. Look for the next tip.')
     } else {
       toast.error('Senha inválida. Tente novamente.')
     }
