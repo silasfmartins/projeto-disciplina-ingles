@@ -8,8 +8,8 @@ export default function Tip7() {
           <button className="w-3 h-3 rounded-full bg-zinc-300 group-hover:bg-green-400" />
         </div>
         <div className="flex flex-col gap-5 max-w-[700px] mx-auto text-center">
-          <h1 className="notranslate" className="text-xl sm:text-5xl">Congratulations</h1>
-          <p  className="notranslate" className="text-lg text-slate-400 font-mono">You got the prize!</p>
+          <h1 className="text-xl sm:text-5xl">Congratulations</h1>
+          <p  className="text-lg text-slate-400 font-mono">You got the prize!</p>
         </div>
       </div>
     </main>
