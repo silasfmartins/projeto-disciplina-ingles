@@ -1,25 +1,28 @@
 'use client'
 
 import { useRouter } from "next/navigation";
-import { useState } from "react"
+import { FormEvent, useState } from "react"
 import toast from "react-hot-toast";
 
 interface TipProps {
   name: number,
-  tip: String,
+  tip1: String,
+  tip2: String,
+  tip3: String,
+  tip4?: String,
   senha: String
 }
 
-export function Tip({name, tip, senha}: TipProps) {
+export function Tip({name, tip1, tip2, tip3, tip4, senha}: TipProps) {
   const [password, setPassword] = useState("");
   const router = useRouter()
 
-  function verifiyPassword() {
-    if (password == senha) {
+  function verifiyPassword(e: FormEvent) {
+    if (password.toUpperCase() == senha.toUpperCase()) {
+      e.preventDefault();
       router.push(`/tips/${name+1}`)
     } else {
       toast.error('Senha inválida. Tente novamente.')
-      console.log("Errou")
     }
   }
 
@@ -31,13 +34,18 @@ export function Tip({name, tip, senha}: TipProps) {
           <button className="w-3 h-3 rounded-full bg-zinc-300 group-hover:bg-yellow-400" />
           <button className="w-3 h-3 rounded-full bg-zinc-300 group-hover:bg-green-400" />
         </div>
-        <div className="flex flex-col gap-5 max-w-[700px] mx-auto">
+        <form onSubmit={verifiyPassword} className="flex flex-col gap-5 max-w-[700px] mx-auto">
           <h1 className="text-5xl">Tip {name}</h1>
-          <p className="text-xl text-slate-400 font-mono">{tip}</p>
+          <ul className="text-xl text-slate-400 font-mono">
+            <li>{tip1}</li>
+            <li>{tip2}</li>
+            <li>{tip3}</li>
+            <li>{tip4}</li>
+          </ul>
           <label className="text-lg" htmlFor="senha">Type the password: </label>
           <input value={password} onChange={e => setPassword(e.target.value)} className="rounded-md py-4 px-3 dark:text-white dark:bg-slate-800 bg-slate-300" type="text" name="input-senha" id="senha" />
-          <button onClick={verifiyPassword} className="dark:text-black bg-green-500 rounded-md py-4 px-3 w-40 text-white">Send</button>
-        </div>
+          <button className="bg-green-600 rounded-md py-4 px-3 w-40 text-white transition-all hover:bg-emerald-500">Send</button>
+        </form>
       </div>
     </main>
   )
